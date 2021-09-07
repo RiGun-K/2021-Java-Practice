@@ -1,45 +1,86 @@
-import java.util.*;
+abstract class Shape {
+ int x, y;
 
-class Employee {
- private String name; // private 로 선언
- private double salary; // private 로 선언
- int age; // package 로 선언
-
- // 생성자
- public Employee(String n, int a, double s) {
-  name = n;
-  age = a;
-  salary = s;
-  setInit();
+ public void move(int x, int y) {
+  this.x = x;
+  this.y = y;
  }
 
- public String getName() {
-  return name;
+ // 추상메소드
+ public void draw() {
+  System.out.print("9");
+ };
+
+ public abstract double area();
+}
+
+class Rectangle extends Shape {
+ int width;
+ int height;
+
+ public Rectangle(int w, int h) {
+  this.width = w;
+  this.height = h;
  }
 
- private void setInit() {
-  System.out.print("private 로 선언:");
-  salary = 10;
- }
- 
- public double getSalary() { 
-  return salary;
+ @Override
+ public void draw() {
+  System.out.print("4");
  }
 
- int getAge() { 
-  System.out.print("package 로 선언:");
-  return age;
+ @Override
+ public double area() {
+  return width * height;
  }
+}
+
+class Circle extends Shape {
+ int radius; // 반지름
+
+ public Circle(int r) {
+  this.radius = r;
+ }
+
+ @Override
+ public void draw() {
+  System.out.print("0");
+ }
+
+ @Override
+ public double area() {
+  return (3.141592 * radius * radius);
+ }
+
+}
+
+class Triangle extends Shape {
+ int w;
+ int h; //
+
+ public Triangle(int a, int b) {
+  this.w = a;
+  this.h = b;
+ }
+
+ @Override
+ public void draw() {
+  System.out.print("3");
+ }
+
+ @Override
+ public double area() {
+  return (0.5 * w * h);
+ }
+
 }
 
 public class Box {
  public static void main(String[] args) {
-  Employee e;
-  e = new Employee("홍길동", 0, 3000);
-  e.age = 26; 
-  double sa = e.getSalary(); 
-  String s = e.getName(); 
-  int a = e.getAge(); 
-  System.out.println(a);
+
+  Triangle t1 = new Triangle(10, 5);
+  t1.draw();
+  System.out.print(t1.getClass().getName());
+  System.out.printf("%4.1f", t1.area());
+
  }
-}         
+}        
