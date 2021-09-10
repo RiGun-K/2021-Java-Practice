@@ -11,6 +11,11 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/1234s/Downloads/ojdbc8.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/1234s/Downloads/gson-2.8.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
