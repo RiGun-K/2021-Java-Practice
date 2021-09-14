@@ -98,12 +98,90 @@ public class MySQLConnection3 {
 
 	private static void insertDB() {
 		// TODO Auto-generated method stub
+		Connection con = insertConnection();
+	}
+
+	private static Connection insertConnection() {
+		// TODO Auto-generated method stub
+
+		 String url = "jdbc:oracle:thin:@10.30.3.95:1521:orcl";
+		 String user = "c##2001291"; 
+		 String pw =  "p2001291";
 		
+				try {
+					Class.forName("oracle.jdbc.driver.OracleDriver");
+				} 
+				catch(ClassNotFoundException e) {
+					// TODO Auto-generated method stub
+					e.printStackTrace();
+				}
+				System.out.println("드라이버 적재성공");
+				
+				Connection con;
+				try {
+				// 2. DB 연결 
+					con = DriverManager.getConnection(url, user, pw);
+					Statement stmt = con.createStatement();
+					
+					
+					String sql = "insert into books (book_id, title, publisher, year, price)" +
+								 " VALUES (5, '객체지향5', '영진출판사5', 2025, 5090)";
+					
+					int result = stmt.executeUpdate(sql);
+					System.out.println("결과값 은" + result);
+					// 결과값은 행의수로 반환되기 때문에 result = 1 출력 
+					
+					stmt.close();
+					con.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+				}
+			
+				return null;
 	}
 
 	private static void deleteDB() {
 		// TODO Auto-generated method stub
+		Connection con = deleteConncetion();
+	}
+
+	private static Connection deleteConncetion() {
+		// TODO Auto-generated method stub
+		String url = "jdbc:oracle:thin:@10.30.3.95:1521:orcl";
+		 String user = "c##2001291"; 
+		 String pw =  "p2001291";
 		
+				try {
+					Class.forName("oracle.jdbc.driver.OracleDriver");
+				} 
+				catch(ClassNotFoundException e) {
+					// TODO Auto-generated method stub
+					e.printStackTrace();
+				}
+				System.out.println("드라이버 적재성공");
+				
+				Connection con;
+				try {
+				// 2. DB 연결 
+					con = DriverManager.getConnection(url, user, pw);
+					Statement stmt = con.createStatement();
+					
+					
+					String sql = "delete from books where book_id=5";
+								 
+					
+					int result = stmt.executeUpdate(sql);
+					System.out.println("결과값 은" + result);
+					// 결과값은 행의수로 반환되기 때문에 result = 1 출력 
+					
+					stmt.close();
+					con.close();
+				}
+				catch(SQLException e) {
+					e.printStackTrace();
+				}
+		return null;
 	}
 	
 }
