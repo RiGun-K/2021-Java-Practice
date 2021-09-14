@@ -2,10 +2,12 @@ package rigun;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class MySQLConnection {
+public class MySQLConnection2 {
 
 	// 개인정보이니 Github을 통해 보신분들은 사용하지 마시오 .. 
 	private static final String URL = "jdbc:oracle:thin:@10.30.3.95:1521:orcl";
@@ -33,11 +35,22 @@ public class MySQLConnection {
 		// 3. SQL문장 작성 및 전송
 			Statement stmt = con.createStatement();
 			
-			String sql = "insert into books (book_id, title, publisher, year, price)" +
-						 " VALUES (7, '객체지향2', '영진출판사2', 2022, 1000)";
-			int result = stmt.executeUpdate(sql);
-			System.out.println("결과값 은" + result);
-			// 결과값은 행의수로 반환되기 때문에 result = 1 출력 
+			
+			String sql = "select * from books";
+			
+			// select 이므로 executeUpdate => Query
+			// ResultSet = 결과 집합 
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			// 결과 집합을 핸들링 하기위해 
+		 
+			// result는 행단위 , next는 첫번째 행 출력
+			// while 반복문을 통해 모든행 출력
+			while(rs.next()) {
+				int id = rs.getInt("book_id");
+				String title = rs.getString("title");
+				System.out.println("결과 값은 "+ id + ":" + title);
+			}
 			
 			stmt.close();
 			con.close();
