@@ -49,7 +49,10 @@ public class MySQLConnection2 {
 			while(rs.next()) {
 				int id = rs.getInt("book_id");
 				String title = rs.getString("title");
-				System.out.println("결과 값은 "+ id + ":" + title);
+				String publisher = rs.getString("publisher");
+				int year = rs.getInt("year");
+				int price = rs.getInt("price");
+				System.out.println("결과 값은 "+ id + ":" + title + ":" + publisher + ":" + year + ":" + price);
 			}
 			
 			stmt.close();
