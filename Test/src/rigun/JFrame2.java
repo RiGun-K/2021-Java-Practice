@@ -1,5 +1,7 @@
 package rigun;
 
+import java.awt.BorderLayout;
+import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Image;
@@ -23,9 +25,9 @@ class MyFrame extends JFrame {
 		this.setIconImage(img);
 		
 		// 프레임의 위치를 선정
-			// setLocation(200,100);
+			 setLocation(200,100);
 		Dimension screenSize = kit.getScreenSize();
-		setLocation(screenSize.width/2, screenSize.height/2);
+//		setLocation(screenSize.width/2, screenSize.height/2);
 		
 //		JButton button1 = new JButton("확인");
 //		// 컨테이너에 컴포넌트를 추가하기 위해 add 메소드를 추가한다.
@@ -42,24 +44,41 @@ class MyFrame extends JFrame {
 		JLabel label = new JLabel();
 		label.setText("안녕하세요 라벨입니다.");
 		JButton button1 = new JButton("확인");
-	//	버튼 비활성화 
+		//	버튼 비활성화 
 		button1.setEnabled(false);
 		
 		JButton button2 = new JButton("취소");
 		
 		JTextField t1 = new JTextField(15);
 		t1.setText("WD-A 학생입니다");
+		
+		JButton bn = new JButton("North");
+		JButton bs = new JButton("South");
+		JButton be = new JButton("East");
+		JButton bw = new JButton("West");
 	// 3. 생성된 컴포넌트를 패널에 추가 ( 레이아웃 해줘야 함 )
-		panel.setLayout(new FlowLayout());
-		panel2.setLayout(new FlowLayout());
+		//	레이아웃 위치 설정 ( Flow,Grid,Box ... Layout 등 )
+		FlowLayout f = new FlowLayout(FlowLayout.CENTER, 20, 5);
+		panel.setLayout(f);
+		// 오른쪽에서부터 왼쪽으로 정렬
+		panel.applyComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+		
+		BorderLayout borderLayout = new BorderLayout();
+		panel2.setLayout(borderLayout);
 		panel.add(label);
 		panel.add(button1);
 		panel.add(button2);
-		panel.add(t1);
+		
+		panel2.add(t1, BorderLayout.CENTER);
+		panel2.add(bn, BorderLayout.NORTH);
+		panel2.add(bs, BorderLayout.SOUTH);
+		panel2.add(be, BorderLayout.EAST);
+		panel2.add(bw, BorderLayout.WEST);
 	// 4. 완료된 패널을 프레임에 추가 (레리아웃도 해줘야 함 ) 
 		this.setLayout(new FlowLayout());
 		this.add(panel);
 		this.add(panel2);
+		
 		setVisible(true);
 	}
 }
