@@ -13,6 +13,11 @@ import javax.swing.JPanel;
 	 * 		paintComponent 메소드 사용	
 	 */
 
+/*
+ *  이미 정의되어있는 클래스명을 사용하여서 에러가 발생함 
+ *	즉, 자바 GUI 사용시 프레임이나 패널 등을 여러가지 사용하게 되는데
+ *  이 때, 정의된 하나의 변수가 중복되어서 발생함 
+ */
 
 class MyPanel extends JPanel {
 
