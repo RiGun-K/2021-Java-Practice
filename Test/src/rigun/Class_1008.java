@@ -41,7 +41,7 @@ class MyFrame1008 extends JFrame {
 	
 		setLayout(new FlowLayout());
 		
-		// 이벤트가 적용될 컴포넌트 생성
+		// 이벤트가 적용될 컴포넌트 생성 !
 		JTextField tf = new JTextField(30);
 		
 		// 리스너 등록
