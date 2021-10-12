@@ -74,7 +74,7 @@ class MyFrame extends JFrame {
 		panel2.add(bs, BorderLayout.SOUTH);
 		panel2.add(be, BorderLayout.EAST);
 		panel2.add(bw, BorderLayout.WEST);
-	// 4. 완료된 패널을 프레임에 추가 (레리아웃도 해줘야 함 ) 
+	// 4. 완료된 패널을 프레임에 추가 (레리아웃도 해줘야 함 !) 
 		this.setLayout(new FlowLayout());
 		this.add(panel);
 		this.add(panel2);
