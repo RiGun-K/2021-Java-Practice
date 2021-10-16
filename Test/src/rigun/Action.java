@@ -8,11 +8,15 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 class MyListener implements ActionListener {
-	int count = 0;
+	int count = 1;
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		MyFrame3.button.setText(count++ + "번 버튼이 눌러졌어여");
+		
+		if(count == 15) {
+			MyFrame3.button.setText("그만 눌러라 이놈아");
+		}
 	}
 	
 }

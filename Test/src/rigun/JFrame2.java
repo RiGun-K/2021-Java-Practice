@@ -25,7 +25,8 @@ class MyFrame extends JFrame {
 		this.setIconImage(img);
 		
 		// 프레임의 위치를 선정
-			 setLocation(200,100);
+		
+		setLocation(200,100);
 		Dimension screenSize = kit.getScreenSize();
 //		setLocation(screenSize.width/2, screenSize.height/2);
 		

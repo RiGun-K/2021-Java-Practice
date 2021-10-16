@@ -24,6 +24,7 @@ class MyFrame1016_06_02 extends JFrame {
 		this.setVisible(true);
 	}
 	
+	// 액션 리스너를 내부 클래스로 생성 , button 객체가 같아야 함 ! 
 	class MyListener1016_06_02 implements ActionListener {
 
 		@Override
@@ -31,6 +32,8 @@ class MyFrame1016_06_02 extends JFrame {
 			// TODO Auto-generated method stub
 			if(e.getSource() == button) {
 				button.setText("버튼을 누르셨습니다");
+			} else if(e.getSource() != button) {
+				button.setText("잘못 누르셨습니다.");
 			}
 		}
 		
