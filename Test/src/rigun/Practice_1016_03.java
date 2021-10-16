@@ -44,7 +44,7 @@ public class Practice_1016_03 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// 생성자 호출
+		// new 연산자로 생성자 호출
 		MyFrame_1016 f = new MyFrame_1016();
 	}
 
