@@ -36,7 +36,7 @@ class MyFrame1016_06 extends JFrame {
 		
 	}
 }
-public class Practice_1016_06 {
+public class Practice_1016_06_01 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
