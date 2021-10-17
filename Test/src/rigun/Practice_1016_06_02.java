@@ -29,7 +29,7 @@ class MyFrame1016_06_02 extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
+
 			if(e.getSource() == button) {
 				button.setText("버튼을 누르셨습니다");
 			} else if(e.getSource() != button) {
