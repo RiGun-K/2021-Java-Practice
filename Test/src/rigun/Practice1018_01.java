@@ -1,5 +1,6 @@
 package rigun;
 
+// 
 class onelist {
 	onelist() {
 		// 선형리스트를 1차원 배열로 구현
