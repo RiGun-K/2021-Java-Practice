@@ -38,6 +38,7 @@ public class Practice_1016_05 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		// 객체 생성 -> 해당 객체의 메소드 실행 
 		MyFrame1016_05 f = new MyFrame1016_05();
 	}
 
