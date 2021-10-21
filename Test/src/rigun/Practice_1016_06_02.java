@@ -17,6 +17,7 @@ class MyFrame1016_06_02 extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new FlowLayout());
 		
+		// 버튼 변수를 객체로 생성
 		button = new JButton("버튼을 누르시오");
 		button.addActionListener(new MyListener1016_06_02());
 		
