@@ -15,7 +15,7 @@ import javax.swing.JTextField;
 
 class MyFrame extends JFrame {
 	public MyFrame() {
-		setSize(300,200);
+		setSize(400,300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("홍길동");
 		
@@ -50,6 +50,7 @@ class MyFrame extends JFrame {
 		
 		JButton button2 = new JButton("취소");
 		
+		// 네모칸 
 		JTextField t1 = new JTextField(15);
 		t1.setText("WD-A 학생입니다");
 		
@@ -59,7 +60,7 @@ class MyFrame extends JFrame {
 		JButton bw = new JButton("West");
 	// 3. 생성된 컴포넌트를 패널에 추가 ( 레이아웃 해줘야 함 )
 		//	레이아웃 위치 설정 ( Flow,Grid,Box ... Layout 등 )
-		FlowLayout f = new FlowLayout(FlowLayout.CENTER, 20, 5);
+		FlowLayout f = new FlowLayout(FlowLayout.CENTER, 10, 5);
 		panel.setLayout(f);
 		// 오른쪽에서부터 왼쪽으로 정렬
 		panel.applyComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);

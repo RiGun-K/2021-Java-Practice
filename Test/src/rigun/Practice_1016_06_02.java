@@ -25,7 +25,7 @@ class MyFrame1016_06_02 extends JFrame {
 		this.setVisible(true);
 	}
 	
-	// 액션 리스너를 내부 클래스로 생성 , button 객체가 같아야 함 ! 
+	// 액션 리스너를 내부 클래스로 생성 , button 객체가 같아야 함 !!
 	class MyListener1016_06_02 implements ActionListener {
 
 		@Override
