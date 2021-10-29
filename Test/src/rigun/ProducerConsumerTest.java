@@ -19,7 +19,7 @@ class Buffer {
 	}
 	
 	synchronized void put(int data) {
-		// 비어있지 않으면 
+		// 비어있지 않으면 put 을 못하니까 기다려라  
 		while(!empty) {
 			try {
 				wait();
