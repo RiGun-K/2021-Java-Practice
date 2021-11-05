@@ -1,6 +1,8 @@
 package rigun;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -17,8 +19,8 @@ public class ServerClient1105 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		// 서버에 접속하여 자신의 이름을 보내고 , 서버의 메시지를 받는다.
 		
-		// 10.30.4.181
 		try {
 		
 			Socket s = new Socket("10.30.4.181", 6555);
@@ -26,6 +28,15 @@ public class ServerClient1105 {
 			out.println("ㅇ");
 			out.close();
 			s.close();
+			
+			
+			// 서버에서 보낸 데이터를 받기위해 BufferedReader 객체를 생성
+			BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
+			// BufferedReader 객체로 데이터를 읽고 출력한다.
+			String data = br.readLine();
+			System.out.println(data);
+			br.close();
+			
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
