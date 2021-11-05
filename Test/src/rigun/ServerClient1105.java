@@ -23,11 +23,10 @@ public class ServerClient1105 {
 		
 		try {
 		
-			Socket s = new Socket("10.30.4.181", 6555);
+			Socket s = new Socket("10.30.4.181", 5555);
 			PrintWriter out = new PrintWriter(s.getOutputStream());
 			out.println("ㅇ");
-			out.close();
-			s.close();
+		
 			
 			
 			// 서버에서 보낸 데이터를 받기위해 BufferedReader 객체를 생성
@@ -35,7 +34,9 @@ public class ServerClient1105 {
 			// BufferedReader 객체로 데이터를 읽고 출력한다.
 			String data = br.readLine();
 			System.out.println(data);
+			out.close();
 			br.close();
+			s.close();
 			
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
