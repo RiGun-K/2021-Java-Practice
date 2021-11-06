@@ -15,9 +15,9 @@ public class URLConnection1105 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		URL naver = null;
+		URL myBlog = null;
 		try {
-			naver = new URL("https://www.naver.com/");
+			myBlog = new URL("https://rigun.tistory.com/");
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -25,7 +25,7 @@ public class URLConnection1105 {
 		
 		
 		try {
-			URLConnection nc = naver.openConnection();
+			URLConnection nc = myBlog.openConnection();
 			InputStream is = nc.getInputStream();
 			InputStreamReader isr = new InputStreamReader(is);
 			BufferedReader br= new BufferedReader(isr);
