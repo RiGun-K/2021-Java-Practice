@@ -24,7 +24,7 @@ public class ServerClient1105 {
 		try {
 		
 			Socket s = new Socket("10.30.4.181", 5555);
-			PrintWriter out = new PrintWriter(s.getOutputStream());
+			PrintWriter out = new PrintWriter(s.getOutputStream(),true);
 			out.println("ㅇ");
 		
 			
