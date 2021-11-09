@@ -25,7 +25,7 @@ public class ServerClient1105 {
 		
 			Socket s = new Socket("10.30.4.181", 5555);
 			PrintWriter out = new PrintWriter(s.getOutputStream(),true);
-			out.println("김우진");
+			out.println("hi");
 			out.flush();	// 메모리 상에 적은 글을 실제 써주는 명령어 ( 실제 전송 )
 			
 			
