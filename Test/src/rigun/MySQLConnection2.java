@@ -10,9 +10,9 @@ import java.sql.Statement;
 public class MySQLConnection2 {
 
 	// 개인정보이니 Github을 통해 보신분들은 사용하지 마시오 .. 
-	private static final String URL = "jdbc:oracle:thin:@10.30.3.95:1521:orcl";
-	private static final String ID = "c##2001291"; 
-	private static final String PW =  "p2001291";
+	private static final String URL = "jdbc:mariadb://127.0.0.1:3306/team";
+	private static final String ID = "root"; 
+	private static final String PW =  "4238";
 	
 	public static void main(String[] args) {
 		
@@ -36,7 +36,7 @@ public class MySQLConnection2 {
 			Statement stmt = con.createStatement();
 			
 			
-			String sql = "select * from books";
+			String sql = "select * from kind";
 			
 			// select 이므로 executeUpdate => Query
 			// ResultSet = 결과 집합 
@@ -47,12 +47,11 @@ public class MySQLConnection2 {
 			// result는 행단위 , next는 첫번째 행 출력
 			// while 반복문을 통해 모든행 출력
 			while(rs.next()) {
-				int id = rs.getInt("book_id");
-				String title = rs.getString("title");
-				String publisher = rs.getString("publisher");
-				int year = rs.getInt("year");
-				int price = rs.getInt("price");
-				System.out.println("결과 값은 "+ id + ":" + title + ":" + publisher + ":" + year + ":" + price);
+				
+				int kindid = rs.getInt("kindid");
+				String kindname = rs.getString("kindname");
+				
+				System.out.println("결과 값은 "+ kindid + ":" + kindname);
 			}
 			
 			stmt.close();
